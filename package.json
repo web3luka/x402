@@ -1,4 +1,7 @@
 {
   "private": true,
-  "packageManager": "pnpm@10.7.0"
+  "packageManager": "pnpm@10.7.0",
+  "devDependencies": {
+    "ton-crypto": "^3.2.0"
+  }
 }
