@@ -230,8 +230,10 @@ describe("TonRpcClient", () => {
       });
 
       const client = createMultiProviderRpc({
-        tonApiKey: "key1",
-        toncenterKey: "key2",
+        customEndpoints: [
+          { name: "tonapi", endpoint: "https://tonapi.io", apiKey: "key1" },
+          { name: "toncenter", endpoint: "https://toncenter.com/api/v2", apiKey: "key2" },
+        ],
       });
 
       const tx = await client.findIncomingByMemo(

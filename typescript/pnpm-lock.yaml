@@ -172,6 +172,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.1.1(react@19.1.1)
+      ton-crypto:
+        specifier: ^3.2.0
+        version: 3.2.0
       tsup:
         specifier: ^8.4.0
         version: 8.5.0(jiti@1.21.7)(postcss@8.5.6)(tsx@4.20.5)(typescript@5.9.2)(yaml@2.8.1)
@@ -385,6 +388,9 @@ importers:
       '@coinbase/cdp-sdk':
         specifier: ^1.22.0
         version: 1.36.1(bufferutil@4.0.9)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.9.2)(utf-8-validate@5.0.10)
+      '@hono/node-server':
+        specifier: ^1.19.5
+        version: 1.19.5(hono@4.9.6)
       '@solana/kit':
         specifier: ^2.1.1
         version: 2.3.0(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.9.2)(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))
@@ -1490,6 +1496,12 @@ packages:
 
   '@hono/node-server@1.19.1':
     resolution: {integrity: sha512-h44e5s+ByUriaRIbeS/C74O8v90m0A95luyYQGMF7KEn96KkYMXO7bZAwombzTpjQTU4e0TkU8U1WBIXlwuwtA==}
+    engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: ^4
+
+  '@hono/node-server@1.19.5':
+    resolution: {integrity: sha512-iBuhh+uaaggeAuf+TftcjZyWh2GEgZcVGXkNtskLVoWaXhnJtC5HLHrU8W1KHDoucqO1MswwglmkWLFyiDn4WQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
@@ -5381,6 +5393,12 @@ packages:
     resolution: {integrity: sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==}
     engines: {node: '>=0.6'}
 
+  ton-crypto-primitives@2.0.0:
+    resolution: {integrity: sha512-K+qKjpS0h9sPW6oExcpxnzuQ7nEgHEiDKwIqE/jWD25o8iFGe3FWj1gKxFNbKE9wwYKc5IV8FwrU+raF0KO5nQ==}
+
+  ton-crypto@3.2.0:
+    resolution: {integrity: sha512-fltdBNQ45gARMuGMEOjPZWPJ5eSql8p3CA0Dj7tPv5lhU5ziT8SxXLAzDraR9HJ8YpjBHLVvYyhMLRiEwxgtMQ==}
+
   tough-cookie@5.1.2:
     resolution: {integrity: sha512-FVDYdxtnj0G6Qm/DhNPSb8Ju59ULcup3tuJxkFb5K8Bv2pUXILbf0xZWU8PX8Ov19OXljbUyveOFwRMwkXzO+A==}
     engines: {node: '>=16'}
@@ -7141,6 +7159,10 @@ snapshots:
       react: 19.1.1
 
   '@hono/node-server@1.19.1(hono@4.9.6)':
+    dependencies:
+      hono: 4.9.6
+
+  '@hono/node-server@1.19.5(hono@4.9.6)':
     dependencies:
       hono: 4.9.6
 
@@ -12412,6 +12434,16 @@ snapshots:
       is-number: 7.0.0
 
   toidentifier@1.0.1: {}
+
+  ton-crypto-primitives@2.0.0:
+    dependencies:
+      jssha: 3.2.0
+
+  ton-crypto@3.2.0:
+    dependencies:
+      jssha: 3.2.0
+      ton-crypto-primitives: 2.0.0
+      tweetnacl: 1.0.3
 
   tough-cookie@5.1.2:
     dependencies:
